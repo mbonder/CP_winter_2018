@@ -14,19 +14,16 @@ public class Loops {
             if (i==4) break;
         }
 
-        int j=0;
-        while (j<6) {
-            System.out.println("J=" + j);
-            j++;
-        }
-        System.out.println();
-        int k=0;
-        do {
-            System.out.println("K=" +k);
-            k--;
-        } while (k>2);
 
-    }
-}
+        }
+
+
+        }
+
+
+
+
+
+
 
 
