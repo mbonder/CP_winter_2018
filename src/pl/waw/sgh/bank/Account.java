@@ -13,14 +13,16 @@ public abstract class Account {
     private Customer customer;
 
     public Account(Integer accountID, Double balance, String currency, Customer customer) {
-        this.accountID = accountID;  this.balance = new BigDecimal(balance);
+        this.accountID = accountID;
+        this.balance = new BigDecimal(balance);
         this.balance.setScale(2);
         this.currency = currency;
         this.customer = customer;
     }
 
-    public Account(Integer accountID, Double balance, Customer customer ) {
-        this.accountID = accountID; this.balance = new BigDecimal(balance);
+    public Account(Integer accountID, Double balance, Customer customer) {
+        this.accountID = accountID;
+        this.balance = new BigDecimal(balance);
         this.balance.setScale(2);
         this.customer = customer;
     }
@@ -65,4 +67,17 @@ public abstract class Account {
                 ", cust=" + customer.getCustomerID() +
                 '}';
     }
+
+    public void deposit(Double amount) {
+    balance = balance.add(new BigDecimal(amount));
+    }
+
+
+    public void charge(Double amount) {
+        BigDecimal res = balance.subtract(new BigDecimal(amount));
+
+
+    }
+
+
 }

@@ -1,6 +1,6 @@
 package pl.waw.sgh.bank;
 
-public class Customer {
+class Customer {
 
     private Integer customerID;
 

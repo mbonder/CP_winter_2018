@@ -17,28 +17,38 @@ public class Bank<accType> {
 
     //public API
 
-    public Customer newCustomer (String firstName,
-                                 String lastName,
-                                 String email) {
+    public Customer newCustomer(String firstName,
+                                String lastName,
+                                String email) {
 
         Customer cust = new Customer(lastCustID++, firstName, lastName, email);
         custList.add(cust);
         return cust;
     }
 
-    public Account newAccount(Customer cust, String accType);
+    public Account newAccount(Customer cust, String accType) {
         Account acc;
         switch (accType) {
-        case "Savings":
-            acc = new savingsaccount(lastAccID++, 0.0, Customer);
-            break;
-            case "Debit"
-                acc = new debitaccounts(lastAccID++, 0.0, Customer);
-            break;
-        default:
-            acc = new Checkingaccount(lastAccID++, 0.0, Customer);
+            case "Savings":
+                acc = new savingsaccount(lastAccID++, 0.0, cust);
+                break;
+            case "Debit":
+                acc = new debitacccounts(lastAccID++, 0.0, cust);
+                break;
+            default:
+                acc = new Checkingaccount(lastAccID++, 0.0, cust);
+        }
+        accList.add(acc);
+        return acc;
     }
-    accList.add(acc)
-    return acc;
+
+    public void transfer(Integer fromAccID, Integer toAccID, Double amount)
+
+    @Override
+    public String toString() {
+        return "Bank{" +
+                "custs=\n" + custList +
+                ",\naccs=\n" + accList +
+                '}';
     }
 }
