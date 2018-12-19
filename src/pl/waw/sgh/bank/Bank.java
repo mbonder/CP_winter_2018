@@ -42,17 +42,19 @@ public class Bank<accType> {
         return acc;
     }
 
-    private Account findAccountbyID(Integer accID){
+    private void findAccountbyID(Integer accID){
         for (Account acc : accList) {
-            if (acc.getAccountID().equals(accID) {
-                return acc;
+            if (acc.getAccountID().equals(accID)) {
+
             }
-            return null
+
         }
     }
 
 
-    public void transfer(Integer fromAccID, Integer toAccID, Double amount)
+    public void transfer(Integer fromAccID, Integer toAccID, Double amount) {
+
+    }
 
     @Override
     public String toString() {
